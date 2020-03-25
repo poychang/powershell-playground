@@ -1,0 +1,9 @@
+{
+    "powershell.scriptAnalysis.enable": true,
+    "powershell.startAutomatically": true,
+    "powershell.integratedConsole.focusConsoleOnExecute": true,
+    "powershell.enableProfileLoading": false,
+    "powershell.codeFormatting.openBraceOnSameLine": true,
+    "editer.formatOnSave": true,
+    "editer.formatOnType": true
+}
