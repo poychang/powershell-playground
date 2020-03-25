@@ -2,6 +2,9 @@
 持續執行 tree /F 指令，觀察資料夾的檔案與資料夾目錄變化
 預設會執行到中午 12 點
 #>
+
+Import-Module -Name ($PSScriptRoot + "\modules\output-module.ps1")
+
 function TreeJob($STOP_HOUR = 12) {
     Write-Output "Start...";
 
@@ -14,22 +17,6 @@ function TreeJob($STOP_HOUR = 12) {
     } while ($current_hour -lt $STOP_HOUR)
 
     Write-Output "End...";
-}
-
-function Write-ColorOutput($ForegroundColor) {
-    # 儲存當前顏色設定
-    $fc = $host.UI.RawUI.ForegroundColor;
-    # 設定新顏色
-    $host.UI.RawUI.ForegroundColor = $ForegroundColor;
-    # 輸出
-    if ($args) {
-        Write-Output $args;
-    }
-    else {
-        $input | Write-Output;
-    }
-    # 還原原本的顏色設定
-    $host.UI.RawUI.ForegroundColor = $fc;
 }
 
 # TreeJob;
