@@ -3,7 +3,7 @@
 預設會執行到中午 12 點
 #>
 
-Import-Module -Name ($PSScriptRoot + "\modules\output-module.ps1")
+Import-Module -Name "..\modules\output-module.ps1"
 
 function TreeJob($STOP_HOUR = 12) {
     Write-Output "Start..."
