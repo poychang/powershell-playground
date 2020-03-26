@@ -6,18 +6,18 @@
 Import-Module -Name ($PSScriptRoot + "\modules\output-module.ps1")
 
 function TreeJob($STOP_HOUR = 12) {
-    Write-Output "Start...";
+    Write-Output "Start..."
 
     do {
-        $current_hour = [int] $(Get-Date -Format "HH");
-        # $current_hour = [int] $(Get-Date -Format "mm"); # For testing
-        Write-ColorOutput green "$(Get-Date -Format "HH:mm") ----------------------------------------";
-        tree /F;
-        Start-Sleep -s 2;
+        $current_hour = [int] $(Get-Date -Format "HH")
+        # $current_hour = [int] $(Get-Date -Format "mm") # For testing
+        Write-ColorOutput green "$(Get-Date -Format "HH:mm") ------------------------------"
+        tree /F
+        Start-Sleep -s 2
     } while ($current_hour -lt $STOP_HOUR)
 
-    Write-Output "End...";
+    Write-Output "End..."
 }
 
-# TreeJob;
-TreeJob(12);
+# TreeJob
+TreeJob(12)

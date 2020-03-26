@@ -42,9 +42,10 @@ function Start-PullAllBranches() {
     
     # 找出是 Git 專案的子資料夾路徑
     $folders = Get-ChildItem -Recurse -Depth 1 -Directory -Force -Filter .git | Foreach-Object {
-        Write-Output $_.FullName.Replace(".git", "")
+        Write-Output $_.FullName.Replace(".git", [string]::Empty)
     }
-    Write-ColorOutput green $folders;
+    Write-ColorOutput green $folders
+    Write-ColorOutput green "Here has $($folders.Length) projects ------------------------------"
 
     foreach ($folder in $folders) {
         if (![string]::IsNullOrEmpty($folder)) {
