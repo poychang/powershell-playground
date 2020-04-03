@@ -5,15 +5,23 @@
 Import-Module "..\modules\output-module.psm1"
 
 function Receive-AllBranches() {
+    # 取得所有分支名稱
     $branches = git branch
+
+    # 逐一處理每個分支
     foreach ($branch in $branches) {
+        # 整理一下分支名稱，移除前面 2 個不需要的字元
         $fixedBranch = $branch.Substring(2, $branch.Length - 2)
+        
+        # 檢查是否有設定遠端分支
         $trackedExpression = "branch." + $fixedBranch + ".merge"
         $trackedBranch = git config --get $trackedExpression
         #  Write-Host($trackedBranch)
         if (![string]::IsNullOrEmpty($trackedBranch)) {
             Write-ColorOutput yellow "Pulling branch: $($fixedBranch)"
+            # 切換分支
             git checkout "$fixedBranch" | Out-Null
+            # 同步遠端分支
             git pull 
         }
         else {
@@ -47,11 +55,14 @@ function Start-PullAllBranches() {
     Write-ColorOutput green $folders
     Write-ColorOutput green "Here has $($folders.Length) projects ------------------------------"
 
+    # 逐一處理每個 Git 專案資料夾
     foreach ($folder in $folders) {
         if (![string]::IsNullOrEmpty($folder)) {
             Write-Host("Change to folder '" + $folder + "'")
             Set-Location -Path $folder
+            # 執行同步遠端分支的功能
             Receive-AllBranches
+            # 切換回開發分支
             Move-DevelopBranch
         }
     }
