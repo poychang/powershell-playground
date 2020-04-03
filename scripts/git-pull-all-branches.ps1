@@ -2,7 +2,7 @@
 根據指定的跟目錄，找出底下有哪些資料夾是 Git 專案，並自動 Pull 專案中所有分支至本機
 #>
 
-Import-Module -Name ($PSScriptRoot + "\modules\output-module.ps1")
+Import-Module "..\modules\output-module.psm1"
 
 function Receive-AllBranches() {
     $branches = git branch
@@ -44,7 +44,8 @@ function Start-PullAllBranches() {
     $folders = Get-ChildItem -Recurse -Depth 1 -Directory -Force -Filter .git | Foreach-Object {
         Write-Output $_.FullName.Replace(".git", [string]::Empty)
     }
-    Write-ColorOutput green $folders;
+    Write-ColorOutput green $folders
+    Write-ColorOutput green "Here has $($folders.Length) projects ------------------------------"
 
     foreach ($folder in $folders) {
         if (![string]::IsNullOrEmpty($folder)) {
