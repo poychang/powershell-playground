@@ -42,6 +42,17 @@ PowerShell 命令的已核准動詞請參考[此官方文件](https://docs.micro
 | `lt`（小於）      | 比較第一個值小於第二個值      | `B -lt A` 結果為 `false` |
 | `le`（小於或等於） | 比較第一個值小於或等於第二個值 | `B -le A` 結果為 `true`  |
 
+### 執行原則
+
+使用 `Get-ExecutionPolicy` cmdlet 來確認系統目前的指令檔執行限制，使用 `Set-ExecutionPolicy Unrestricted` cmdlet 可將指令檔的執行原則改為 `Unrestricted`。
+
+- `Restricted`：關閉指令檔的執行功能，這是預設的設定值
+- `AllSigned`：只允許執行受信任發行者簽署過的指令檔
+- `RemoteSigned`：在本機電腦所撰寫的指令檔，不需要簽署就可執行；但是從網際網路（例如：email、MSN Messenger）下載的指令檔就必須經過受信任發行者的簽署才能執行
+- `Unrestricted`：任何指令檔皆可被執行，但是於執行網際網路下載的指令檔時，會先出現警告的提示視窗
+
+>在正式環境建議將指令檔的執行原則改成 `RemoteSigned`，個人開發環境使用 `Unrestricted` 可方便測試所撰寫的指令檔。
+
 ## 撰寫模組
 
 正規方式請參考官方文件[如何撰寫 PowerShell 指令碼模組](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/module/how-to-write-a-powershell-script-module)，但這裡使用特殊作法，來做到簡便的模組化開發，請參考 [PowerShell Import-Module with .ps1 quirk](https://gist.github.com/magnetikonline/2cdbfe45258c0cc3cf1530548baf30a7) 這邊說明。
@@ -56,7 +67,7 @@ function Show-Demo() {
 }
 ```
 
-在要使用 `demo-module.ps1` 腳本所提供的 cmdlet 方法的腳本檔案上方，使用以下方式載入：
+在要使用 `demo-module.ps1` 腳本所提供的 cmdlet 方法的指令檔案上方，使用以下方式載入：
 
 ```ps1
 Import-Module -Name ($PSScriptRoot + "\modules\demo-module.ps1")
