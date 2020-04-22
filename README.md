@@ -4,7 +4,30 @@
 
 ## 參考資料
 
-- [PowerShell 命令的已核准動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands)
+PowerShell 命令的已核准動詞請參考[此官方文件](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands)，部分動詞清單如下：
+
+- [一般動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#common-verbs)
+  - Add
+  - Get
+  - Move
+  - New
+  - Search
+  - Select
+  - Set
+  - Show
+- [通訊動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#communications-verbs)
+  - Connect
+  - Disconnect
+  - Read
+  - Receive
+  - Send
+  - Write
+- [資料動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#data-verbs)
+- [診斷動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#diagnostic-verbs)
+- [生命週期動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#lifecycle-verbs)
+- [安全性動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#security-verbs)
+- [其他動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#other-verbs)
+  - Use
 
 ## 撰寫模組
 
