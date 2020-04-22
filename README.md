@@ -4,6 +4,8 @@
 
 ## 參考資料
 
+### 動詞
+
 PowerShell 命令的已核准動詞請參考[此官方文件](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands)，部分動詞清單如下：
 
 - [一般動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#common-verbs)
@@ -28,6 +30,17 @@ PowerShell 命令的已核准動詞請參考[此官方文件](https://docs.micro
 - [安全性動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#security-verbs)
 - [其他動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#other-verbs)
   - Use
+
+### 比較運算子
+
+| 運算子            | 描述                      | 範例                     |
+| ---------------- | ------------------------- | ----------------------- |
+| `eq`（等於）      | 比較兩個值是否相等           | `A -eq B` 結果為 `false` |
+| `ne`（不等於）    | 比較兩個值不相等             | `A -ne B` 結果為 `true`  |
+| `gt`（大於）      | 比較第一個值大於第二個值      | `B -gt A` 結果為 `true`  |
+| `ge`（大於或等於） | 比較第一個值大於或等於第二個值 | `B-A` 結果為 `true`      |
+| `lt`（小於）      | 比較第一個值小於第二個值      | `B -lt A` 結果為 `false` |
+| `le`（小於或等於） | 比較第一個值小於或等於第二個值 | `B -le A` 結果為 `true`  |
 
 ## 撰寫模組
 
