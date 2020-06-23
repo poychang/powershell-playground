@@ -1,8 +1,8 @@
 <#
-使用 Invoke-WebRequest 發送訊息到 Teams Channel
+使用 Invoke-RestMethod 發送訊息到 Teams Channel
+Invoke-WebRequest Gets content from a web page on the Internet
+Invoke-RestMethod Sends an HTTP or HTTPS request to a RESTful web service
 #>
-
-Import-Module "..\modules\output-module.psm1"
 
 $exitCode = 1
 
@@ -15,8 +15,8 @@ try {
         $targetUrl = "https://outlook.office.com/webhook/70ed5294-ddfb-4eab-9be5-6a8c430661e2@f43a2d89-bcd5-425f-981c-f7231bcd4467/IncomingWebhook/7f6df48fc07849fc917f557f719b569d/3098eded-4c4c-498b-8619-90a141fc88c7"
     }
 
-    Write-ColorOutput green "Sending request to $targetUrl"
-
+    Write-Output "Sending request to $targetUrl"
+    $Headers = @{ 'Content-Type' = 'application/json'; }
     $Body = "{
         ""@type"": ""MessageCard"",
         ""@context"": ""http://schema.org/extensions"",
@@ -35,14 +35,14 @@ try {
         ]
     }"
     
-    $Response = Invoke-WebRequest $targetUrl -SessionVariable 'Session' -Body $Body -Method 'POST'
-    $StatusCode = $Response.StatusCode
+    $Response = Invoke-WebRequest $targetUrl -SessionVariable 'Session' -Method 'POST' -Headers $Headers -Body $Body
+    Write-Output "StatusCode: $($Response.StatusCode)"
+    Write-Output "Response: $($Response.Content)"
     $exitCode = 0
 }
 catch {
-    $StatusCode = 400
+    Write-Output $Error[0]
     $exitCode = 1
 }
 
-$StatusCode
 exit $exitCode

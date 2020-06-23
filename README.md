@@ -2,6 +2,21 @@
 
 個人使用的 PowerShell Script
 
+## 常用的 Cmdlet
+
+| Cmdlet            | 說明                   | 文件  |
+| ----------------- | --------------------- | ----- |
+| `Write-Output`    | 輸出結果               | [Doc](https://docs.microsoft.com/zh-tw/powershell/module/microsoft.powershell.utility/write-output) |
+| `ConvertTo-Json`  | 將物件轉成 JSON 格式輸出 | |
+| `New-item`        | 輸出至檔案              | |
+
+## 匿名物件寫法
+
+```ps1
+$Obj = @{ 'Key' = 'Value'; }
+ConvertTo-Json $Obj
+```
+
 ## 參考資料
 
 ### 動詞
@@ -76,3 +91,14 @@ Import-Module -Name ($PSScriptRoot + "\modules\demo-module.ps1")
 >請注意載入檔案的相對路徑。
 
 這樣就可以使用 `Show-Demo` cmdlet 方法。
+
+### 管線變數
+
+PowerShell 很多 Cmdlet 指令可以使用 `|` 管線符號來連接另一個 Cmdlet，將前一個 Cmdlet 所輸出的結館傳遞給下一個 Cmdlet，同時也可以使用 `$_` 或 `$PSItem` （這兩個是一樣的東西）來取得上一個 Cmdlet 所輸出的結果。
+
+下面的範例會輸出一樣的結果：
+
+```ps1
+Get-ChildItem -Path C:\Windows\ -Directory | ForEach-Object { $_.Name }
+Get-ChildItem -Path C:\Windows\ -Directory | ForEach-Object { $PSItem.Name }
+```
