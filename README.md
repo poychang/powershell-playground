@@ -10,11 +10,11 @@
 | `ConvertTo-Json`  | 將物件轉成 JSON 格式輸出 | |
 | `New-item`        | 輸出至檔案              | |
 
-## 匿名物件寫法
+## 匿名物件
 
 ```ps1
 $Obj = @{ 'Key' = 'Value'; }
-ConvertTo-Json $Obj
+ConvertTo-Json $Obj # 轉成 JSON 字串
 ```
 
 ## 參考資料
