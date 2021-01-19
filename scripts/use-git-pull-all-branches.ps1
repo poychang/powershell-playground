@@ -1,5 +1,5 @@
 <#
-根據指定的跟目錄，找出底下有哪些資料夾是 Git 專案，並自動 Pull 專案中所有分支至本機
+根據指定的根目錄，找出底下有哪些資料夾是 Git 專案，並自動 Pull 專案中所有分支至本機
 #>
 
 Import-Module "..\modules\output-module.psm1"

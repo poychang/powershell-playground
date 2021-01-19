@@ -40,9 +40,66 @@ PowerShell 命令的已核准動詞請參考[此官方文件](https://docs.micro
   - Send
   - Write
 - [資料動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#data-verbs)
+  - Backup
+  - Checkpoint
+  - Compare
+  - Compress
+  - Convert
+  - ConvertFrom
+  - ConvertTo
+  - Dismount
+  - Edit
+  - Expand
+  - Export
+  - Import
+  - Initialize
+  - Limit
+  - Merge
+  - Mount
+  - Out
+  - Publish
+  - Restore
+  - Save
+  - Sync
+  - Unpublish
+  - Update
 - [診斷動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#diagnostic-verbs)
+  - Debug
+  - Measure
+  - Repair
+  - Resolve
+  - Test
+  - Trace
 - [生命週期動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#lifecycle-verbs)
+  - Approve
+  - Assert
+  - Build
+  - Complete
+  - Confirm
+  - Deny
+  - Deploy
+  - Disable
+  - Enable
+  - Install
+  - Invoke
+  - Register
+  - Request
+  - Restart
+  - Resume
+  - Start
+  - Stop
+  - Submit
+  - Suspend
+  - Uninstall
+  - Unregister
+  - Wait
 - [安全性動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#security-verbs)
+  - Block
+  - Grant
+  - Protect
+  - Revoke
+  - Unblock
+  - Unprotect
 - [其他動詞](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands#other-verbs)
   - Use
 
