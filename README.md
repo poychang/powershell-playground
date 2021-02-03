@@ -4,11 +4,12 @@
 
 ## 常用的 Cmdlet
 
-| Cmdlet            | 說明                   | 文件  |
-| ----------------- | --------------------- | ----- |
-| `Write-Output`    | 輸出結果               | [Doc](https://docs.microsoft.com/zh-tw/powershell/module/microsoft.powershell.utility/write-output) |
-| `ConvertTo-Json`  | 將物件轉成 JSON 格式輸出 | |
-| `New-item`        | 輸出至檔案              | |
+| Cmdlet             | 說明             | 文件                                                                                                     |
+| ------------------ | ---------------- | -------------------------------------------------------------------------------------------------------- |
+| `Write-Output`     | 輸出結果         | [Docs](https://docs.microsoft.com/zh-tw/powershell/module/microsoft.powershell.utility/write-output)     |
+| `ConvertTo-Json`   | 物件轉 JSON 格式 |                                                                                                          |
+| `ConvertFrom-Json` | JSON 轉物件格式  | [Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json) |
+| `New-item`         | 輸出至檔案       |                                                                                                          |
 
 ## 匿名物件
 
@@ -18,6 +19,18 @@ ConvertTo-Json $Obj # 轉成 JSON 字串
 ```
 
 ## 參考資料
+
+Visual Studio Code 的 [PowerShell 擴充套件](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)附帶一些範例程式碼，路徑為：
+
+```
+$HOME/.vscode[-insiders]/extensions/ms-vscode.PowerShell-<version>/examples
+```
+
+可以在 PowerShell 中使用下列指令用 Visual Studio Code 開啟：
+
+```powershell
+code (Get-ChildItem $Home\.vscode\extensions\ms-vscode.PowerShell-*\examples)[-1]
+```
 
 ### 動詞
 
@@ -105,13 +118,13 @@ PowerShell 命令的已核准動詞請參考[此官方文件](https://docs.micro
 
 ### 比較運算子
 
-| 運算子            | 描述                      | 範例                     |
-| ---------------- | ------------------------- | ----------------------- |
-| `eq`（等於）      | 比較兩個值是否相等           | `A -eq B` 結果為 `false` |
-| `ne`（不等於）    | 比較兩個值不相等             | `A -ne B` 結果為 `true`  |
-| `gt`（大於）      | 比較第一個值大於第二個值      | `B -gt A` 結果為 `true`  |
+| 運算子             | 描述                           | 範例                     |
+| ------------------ | ------------------------------ | ------------------------ |
+| `eq`（等於）       | 比較兩個值是否相等             | `A -eq B` 結果為 `false` |
+| `ne`（不等於）     | 比較兩個值不相等               | `A -ne B` 結果為 `true`  |
+| `gt`（大於）       | 比較第一個值大於第二個值       | `B -gt A` 結果為 `true`  |
 | `ge`（大於或等於） | 比較第一個值大於或等於第二個值 | `B-A` 結果為 `true`      |
-| `lt`（小於）      | 比較第一個值小於第二個值      | `B -lt A` 結果為 `false` |
+| `lt`（小於）       | 比較第一個值小於第二個值       | `B -lt A` 結果為 `false` |
 | `le`（小於或等於） | 比較第一個值小於或等於第二個值 | `B -le A` 結果為 `true`  |
 
 ### 執行原則

@@ -1,3 +1,8 @@
+<#
+動態建立 Function
+https://blog.poychang.net/dynamic-create-function-in-powershell/
+#>
+
 function Add-DynamicFunction {
     Param(
         [Parameter(
@@ -19,6 +24,7 @@ function Add-DynamicFunction {
     Invoke-Expression $Func
 }
 
+# 使用方式
+
 Add-DynamicFunction -FuncName 'Hello-Dynamic-Function' -FuncAction 'Write-Output "Hello-Dynamic-Function..."'
 Hello-Dynamic-Function
-
