@@ -35,7 +35,7 @@ try {
         ]
     }"
     
-    $Response = Invoke-WebRequest $targetUrl -SessionVariable 'Session' -Method 'POST' -Headers $Headers -Body $Body
+    $Response = Invoke-WebRequest $targetUrl -SessionVariable 'Session' -Method 'POST' -Headers $Headers -Body $Body -NoProxy
     Write-Output "StatusCode: $($Response.StatusCode)"
     Write-Output "Response: $($Response.Content)"
     $exitCode = 0

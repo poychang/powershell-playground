@@ -14,8 +14,16 @@
 ## 匿名物件
 
 ```ps1
-$Obj = @{ 'Key' = 'Value'; }
-ConvertTo-Json $Obj # 轉成 JSON 字串
+$Object = @{ 'Key' = 'Value'; }
+# 比較嚴謹的寫法，在前面加 [PSCustomObject]
+# $Object = [PSCustomObject]@{ 'Key' = 'Value'; }
+ConvertTo-Json $Object # 轉成 JSON 字串
+
+$Array = @(
+  @{ 'Key' = 'Value1'; },
+  @{ 'Key' = 'Value2'; }
+)
+ConvertTo-Json $Array # 轉成 JSON 字串
 ```
 
 ## 參考資料
