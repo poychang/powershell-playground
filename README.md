@@ -1,6 +1,29 @@
-# PowerShell Script
+# PowerShell
 
 個人使用的 PowerShell Script
+
+## PowerShell 檔案類型
+
+REF: [What are the different PowerShell file types?](https://stackoverflow.com/questions/62604621/what-are-the-different-powershell-file-types)
+
+- `.ps1` 是 PowerShell 腳本的檔案類型，它包含了 PowerShell 指令碼，可以在 PowerShell 中執行，如同 `.sh`、`.bat` 這類的腳本檔
+- `.psm1` 是 PowerShell 模組的檔案類型，它包含了封裝好的 PowerShell 函式或 cmdlet 指令碼，可以在 PowerShell 中使用 `Import-Module` 指令載入並使用
+  - Other `Module-Interaction` cmdlets:
+    - `Export-ModuleMember`
+    - `Find-Module`
+    - `Get-InstalledModule`
+    - `Get-Module`
+    - `ImportSystemModules`
+    - `New-Module`
+    - `New-ModuleManifest`
+    - etc, tab through `*Module*` in PowerShell
+- `.psd1` 是 PowerShell 模組設定檔的檔案類型，它包含了模組相關的元數據信息，如模組名稱、版本、依賴性等。這些元數據會被 PowerShell 用來檢查模組的有效性和可用性，更多關於此檔案類型的資訊請參考[如何撰寫 PowerShell 模組資訊清單](https://learn.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-module-manifest)
+  - Manipulated with
+    - `Import-PowerShellDataFile`
+    - `New-ModuleManifest`
+    - `Test-ModuleManifest`
+    - `Update-ModuleManifest`
+    - `Import-LocalizedData`
 
 ## 常用的 Cmdlet
 
