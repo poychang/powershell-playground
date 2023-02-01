@@ -2,7 +2,40 @@
 
 個人使用的 PowerShell Script
 
-## PowerShell 檔案類型
+## 設定檔
+
+REF: [Profiles](https://learn.microsoft.com/zh-tw/powershell/module/microsoft.powershell.core/about/about_profiles)
+
+PowerShell 支援多個設定檔來源，它們的設定檔位置與載入的優先順序如下：
+
+- 所有使用者、所有主機
+  - Windows - `$PSHOME\Profile.ps1`
+  - Linux - `/usr/local/microsoft/powershell/7/profile.ps1`
+  - macOS - `/usr/local/microsoft/powershell/7/profile.ps1`
+- 所有使用者、目前主機
+  - Windows - `$PSHOME\Microsoft.PowerShell_profile.ps1`
+  - Linux - `/usr/local/microsoft/powershell/7/Microsoft.Powershell_profile.ps1`
+  - macOS - `/usr/local/microsoft/powershell/7/Microsoft.Powershell_profile.ps1`
+- 目前使用者、所有主機
+  - Windows - `$HOME\Documents\PowerShell\Profile.ps1`
+  - Linux - `~/.config/powershell/profile.ps1`
+  - macOS - `~/.config/powershell/profile.ps1`
+- 目前使用者、目前主機
+  - Windows - `$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`
+  - Linux - `~/.config/powershell/Microsoft.Powershell_profile.ps1`
+  - macOS - `~/.config/powershell/Microsoft.Powershell_profile.ps1`
+
+上述設定檔路徑包含下列變數：
+
+- 變數 `$PSHOME` 會儲存 PowerShell 的安裝目錄
+- 變數 `$HOME` 會儲存目前使用者的主目錄
+
+關於 Visual Studio Code，支援下列主機特定設定檔：
+
+- 所有使用者、目前主機 - `$PSHOME\Microsoft.VSCode_profile.ps1`
+- 目前使用者、目前主機 - `$HOME\Documents\PowerShell\Microsoft.VSCode_profile.ps1`
+
+## 檔案類型
 
 REF: [What are the different PowerShell file types?](https://stackoverflow.com/questions/62604621/what-are-the-different-powershell-file-types)
 
