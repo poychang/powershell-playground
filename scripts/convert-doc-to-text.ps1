@@ -31,10 +31,10 @@ $word = New-Object -ComObject Word.Application
 $word.Visible = $false
 
 # 設定 DOC 檔案的目錄路徑
-$docDirectory = "C:\Path\To\Your\Docs"
+$sourceDirectory = "C:\Path\To\Your\Docs"
 
 # 設定輸出 TXT 檔案的目錄路徑
-$txtDirectory = "C:\Path\To\Your\Output"
+$outputDirectory = "C:\Path\To\Your\Output"
 
 # 取得 DOC 檔案清單
 $docFiles = Get-ChildItem -Path $sourceDirectory -Filter "*.doc" -File
