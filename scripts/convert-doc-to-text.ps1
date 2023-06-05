@@ -1,6 +1,6 @@
 <#
 此範例程式碼示範如何透過 Microsoft Word 將 DOC 檔案轉換為 TXT 檔案
-使用前先修改 $docDirectory 和 $txtDirectory 變數的值
+使用前先修改 $sourceDirectory 和 $outputDirectory 變數的值
 並且設定要轉換的格式，此範例程式預設為 TXT 格式，可以自行從下列清單中選擇
 #>
 
@@ -37,15 +37,15 @@ $docDirectory = "C:\Path\To\Your\Docs"
 $txtDirectory = "C:\Path\To\Your\Output"
 
 # 取得 DOC 檔案清單
-$docFiles = Get-ChildItem -Path $docDirectory -Filter "*.doc" -File
+$docFiles = Get-ChildItem -Path $sourceDirectory -Filter "*.doc" -File
 
 # 迴圈處理每個 DOC 檔案
 foreach ($docFile in $docFiles) {
     # 建立 DOC 檔案的完整路徑
-    $docPath = [System.IO.Path]::Combine($docDirectory, $docFile)
+    $docPath = [System.IO.Path]::Combine($sourceDirectory, $docFile)
     
     # 建立輸出 TXT 檔案的完整路徑
-    $txtPath = [System.IO.Path]::Combine($docDirectory, $docFile.BaseName + ".txt")
+    $txtPath = [System.IO.Path]::Combine($outputDirectory, $docFile.BaseName + ".txt")
     Write-Host $txtPath
 
     # 載入 DOC 檔案
@@ -64,4 +64,4 @@ $word.Quit()
 [System.Runtime.Interopservices.Marshal]::ReleaseComObject($word) | Out-Null
 Remove-Variable word
 
-Write-Host "批次處理完成。TXT 檔案已輸出至: $txtDirectory"
+Write-Host "批次處理完成。TXT 檔案已輸出至: $outputDirectory"
